@@ -1,0 +1,329 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{enumitem} 
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\usepackage{parskip}
+\begin{document}
+
+\begin{center}
+
+\textbf{\Large{QnR Data Science}}
+\par
+\vspace{10mm}
+By
+\vspace{10mm}
+\par
+DEPARTMENT OF NETWORKS
+\par
+SCHOOL OF COMPUTING AND INFORMATICS TECHNOLOGY
+\par
+\vspace{15mm}
+A Project Proposal Submitted to the School of Computing and Informatics Technology 
+\par
+for the Study Leading to a Project in Partial Fulfillment of the 
+\par
+Requirements for the Award of the Degree of Bachelor of
+\par 
+Science in Software Engineering of Makerere University.
+\par
+\vspace{25mm}
+Supervisor
+\par
+Kamulegeya Grace
+\par 
+Department of Networks
+\par
+School of Computing and Informatics Technology, Makerere University
+\par
+kougaus@gmail.com, +256-41-540628, Fax: +256-41-540620 note: numbers are standard
+\par
+\date{\today}
+\end{center}
+\pagenumbering{roman}
+\newpage
+
+
+\underline{GROUP MEMBERSHIP :} 
+
+\begin{table}
+\begin{tabular}{ | c | c | c | c | }
+  \hline 
+	No. & Names & Registration numbers & Signature \\
+   \hline
+  1 & AGASI HERBERT & 13/U/2871/PS & \\
+  \hline
+  2 & AKANKWASA AGNES & 13/U/3153/PS & \\
+  \hline
+  3 & KATENDE ANDREW & 13/U/6107/PS & \\
+  \hline
+  4 & MUGISA BRIGHT & 13/U/8373/PS & \\
+\hline
+
+\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\section{Introduction}
+
+\subsection{Background}
+The cost of conducting surveys is very high, increasing and time consuming. Starting hiring experts to design surveys, forming and training a team to conduct the survey, another team to input data in the system. The input of data is quite slow and by the time the data in input it’s obsolete or erroneous. This also requires the organization to incur the printing cost and transport cost. Finally, the organization has to hire SPSS experts to actually mine the data and produce the visualizations that can easily be interpreted by the organization. The entire process is time consuming.
+
+\par
+For some companies to actually mine the data collected by an organization there are restrictions which include the fact that the data must have been collected by the data mining organization. In addition, the data has to be directly accessed form their servers which also includes extra costs. 
+They include data costs for Internet connections to the data servers and service costs for using the data mining servers.
+In that view point the data has to be secured since it is moved through various servers and some of the information is sensitive hence the need to encrypt the data is offered as a service for an extra charge.  
+
+\par
+Researchers are called to disclose fully to those who sponsor surveys the limitations and shortcomings of the survey and to avoid use of methods that deliberately introduce bias into the results. A survey report should include information on who sponsored it, who conducted it, exact wording and sequencing of questions, description of the population and how a sample was selected, sample sizes and sampling tolerance, and the method place and dates of data collection. This information is seldom available in published research reports or media summaries, but should be obtainable with a phone call or letter to the sponsor of the survey. 
+
+\subsection{Problem statement}
+Organizations that carry out surveys have not effectively utilized their research through surveys due to limited capital. This can be attributed to;
+
+
+\begin{enumerate}[label=(\roman*)]
+\item Too many third party firms in the survey process that increase the cost.
+\item The  limitations on the type of data that can be mined by  mining organizations.
+\item The limited time in which the survey must be conducted.
+\end{enumerate}
+
+
+\subsection{Main Objectice}
+To implement an online survey tool that simplifies the process of definition, collection, aggregation and analysis of questionnaire based surveys and (to some degree) make all interactions real-time.
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Definition}\par
+Components in this category are concerned with the CRUD and deployment of surveys and generally;
+\begin{enumerate}[label=(\roman*)]
+\item To provide mechanisms to create/design a survey that is deployed to a collection node (such as a mobile device or web-browser).These mechanisms should support multiple forms of question types that a user might require and data types that a user would like to collect. They should also be language independent.
+\item Real-time updating of an already deployed survey.
+
+\item To provide mechanisms to dynamically control the rendering of a survey based on
+responses to questions in that survey.
+\end{enumerate}
+
+\item \textbf{Collection}\par
+Components in this category are responsible;
+\begin{enumerate}[label=(\roman*)]
+\item To render deployed surveys (whether or not they contain render logic).
+\item For delivery of collected survey responses to an aggregation node.
+
+\item To cache collected survey responses to later be delivered (in the event of a communication breakdown) to an aggregation node.
+\end{enumerate}
+
+\item \textbf{Aggregation}\par
+Components in this category are responsible;
+\begin{enumerate}[label=(\roman*)]
+\item To provide mechanisms to support storage, backup and recovery of collected survey
+responses.
+\end{enumerate}
+\item \textbf{Analysis}\par
+Components in this category are responsible;
+\begin{enumerate}[label=(\roman*)]
+\item To provide mechanisms to support the analysis (both explanatory and exploratory)
+of collected survey responses.
+\item These mechanisms should also provide support for data visualization.
+\end{enumerate}
+
+\end{enumerate}
+\subsection{Objectives}
+
+As stated above, the system can be broadly categorized into components/objectives concerned with;
+
+\begin{enumerate}[label=(\roman*)]
+\item Definition of surveys.
+\item Collection of survey responses.
+\item Aggregation of collected survey data.
+\item Analysis of aggregated survey data.
+\end{enumerate}
+
+\subsection{Scope}
+
+
+The project is meant to produce a survey tool that caters for many forms of assessment and survey needs depending on the outcomes that one wishes to assess. 
+For instance, educational policymakers use assessment to set standards, monitor the quality of education, or formulate policies, while teachers may use assessment to perform individual diagnosis of performance problems, monitor overall student progress and to plan and improve curriculum and teaching. Administrators of pre-college and college level STEM (science, technology, engineering or mathematics) outreach programs may use assessment to measure whether activities meet stated goals, monitor the quality of programming, and to plan and improve continuing activities.
+\par
+Undergraduate students in an engineering curriculum may be assessed on their ability to provide
+solutions to a design problem; high school students that participate in an orientation to STEM
+careers may complete pre and post self- report instruments designed to assess their motivation to
+pursue a STEM career and their knowledge of STEM careers.
+
+
+
+\newpage
+\section{Literature Review}
+\subsection{Tool review}
+This section includes review of some of the existing online survey tools describing how they work and challenges related to using them;
+We chose these tools because they represent different levels of service for several
+features and rose to the top of the tools surveyed in terms of usability and functionality and thus
+provide the reader with a sense of the differences among tools.
+\par
+{\bf Google Drive} Form Survey is a free useful tool to help you plan events. Send a survey, give students quiz, or collect other information in an easy, streamlined way. A Google Form can be connected to a Google spreadsheet. FREE with Gmail account.
+SurveyGizmo is a web based software for education, research and companies to create online surveys, questionnaires and forms. FREE version allows unlimited questions, limited to 200 responses/month and 8 basic question types.
+\par
+{\bf Hosted} Survey (www.hostedsurvey.com) is both a self-service and full-service tool. This means
+you can create instruments yourself, or you can pay their staff to create and maintain your
+instruments. Hosted survey markets itself as being appropriate for both business, and academic
+applications – however their pricing structure favors organizations with fairly
+liberal budgets. Just recently, however, they have added the availability of special “higher education” pricing – although their web site does not specify those prices. According to
+NPowerNY (n.d.) one of Hosted Survey’s strengths is its automated email invitation and
+respondent tracking system which enables respondent tracking, reminders and potentially
+increased response rates.
+Although there are many positives about this package, It’s lacking in some areas especially when we considered its relatively high price. For instance, we found that the site could be quite slow; the tool would not allow for a text box to be associated with an “other” response, and the formatting of some question types seemed crowded.
+\par
+{\bf Survey Monkey}(www.surveymonkey.com) is a popular online survey tool that comes with
+relatively large set of features considering the pricing structure. It provides a web based survey with which you can create 15 question types including rating scales, multiple choices and more. It is designed to be easy to use but at the same time does not provide the high degree of customization that products such as Inquisite (see below) does.  FREE version allows you up to 10 survey question and 100 responses. Its ease of use may account for its relative popularity.
+
+\par
+{\bf SurveyZ} (http://surveyz.com/) is also an online service that enables you to create and analyze
+surveys online. Some users like the step-by-step process for creating questions and its ability to preview the question before completing it. Mainly large academic institutions and corporations use Survey Z (NPowerNY, n.d.).
+
+\par
+{\bf Inquisite} (www.inquisite.com) is a different type of assessment instrument tool. Rather than
+providing an online interface for creating and managing assessment instruments, Inquisite is a
+software package that you purchase and use to create your own instruments. It then allows you to
+publish your instrument to their website for collecting data. It offers a wide array of features
+oriented towards marketing research including extensive survey customization, track responses
+and respondents, Inquisite’s web site says “only surveys show what customers really think” and
+the overall site markets itself as being predominantly for corporate customers.
+
+\par
+The needs of our project, which is typical of many WIE/WISE activity survey needs,
+dictated that the following criteria in particular be strongly considered during our tool development:
+\begin{enumerate}[label=(\roman*)]
+\item  cost 
+\item item type flexibility
+\item item logic 
+\item robust and secure data storage and download
+\item easy-to use user interface for developing items and instruments.
+\end{enumerate}
+
+Strength of the proposed tool over existing tools;
+For our proposed system, we seek to support many platforms, that is; support web, mobile, desktop and email.
+\newpage
+\section{Methodology}
+This section describes the step by step process that will be followed to achieve the project specific objectives. This study will involve both qualitative and quantitative methods. This is because the research requires people’s views and opinions, and analysis of documents.
+
+\subsection{System Study and Analysis}
+This section involves a detailed study of the current system which later leads to
+Specifications of a new system to be developed. 
+
+\subsubsection{System Study}
+This section will look at the in-depth study of current system, identifying its limitations and problems and then identifying user requirements of the new system
+
+\subsubsection{Requirement Determination}
+A requirement defines a feature to be included in a system. Requirement determination involves looking at the current systems, collecting, analyzing data and information about who is involved plus also what data and information is used, and how the current existing systems can be improved. The requirements are either functional or non-functional.
+\begin{enumerate}[label=(\roman*)]
+\item Functional requirements are the specifications of what the system is exactly supposed to do and the output of the system.
+
+\item Non-Functional requirements are the specs that characterize the behavior of the system and their output is the effect the system has on the users.
+\end{enumerate}
+
+\subsubsection{Data Collection}
+The data collection will be done using various techniques which include
+
+\par
+Interviews
+Interviews can be conducted in person or over the telephone. we shall design well-structured questions that shall be conducted on a person to person basis with researcher and organizations to gain a deeper understanding of the needs of the system.
+
+\par
+Questionnaires
+We shall have well designed questions structured in a way that will depict trends that appear unclear to the development team to enable making of decisions on behalf of the stake holders.
+\par
+Documents and Records.
+We will examining existing data in the form of databases, meeting minutes, reports, attendance logs, financial records, newsletters, etc. This can be an inexpensive way to gather information, but may be an incomplete data source 
+
+\subsection{System architecture}
+\begin{figure}[h!]
+\includegraphics[width=\linewidth]{arc.png}
+\caption{System architecture}
+\label{fig:architecutre}
+\end{figure}
+
+
+\subsection{Object oriented analysis}
+The purpose of any analysis activity in is to create a model of the system's functional requirements that is independent of implementation constraints. We will organize requirements around objects, which integrate both behaviors (processes) and states (data) modeled after real world objects that the system interacts with.
+The primary tasks in object-oriented analysis (OOA) are:
+\begin{enumerate}[label=(\roman*)]
+\item Find the objects
+\item Organize the objects
+\item Describe how the objects interact
+\item Define the behavior of the objects
+\item Define the internals of the objects
+\end{enumerate}
+
+Common models used in OOA are use cases and object models. Use cases describe scenarios for standard domain functions that the system must accomplish. Object models describe the names, class relations (e.g. Circle is a subclass of Shape), operations, and properties of the main objects. User-interface mockups or prototypes can also be created to help understanding. [1]
+
+\subsection{Object oriented design}
+During object-oriented design (OOD), we will apply implementation constraints to the conceptual model produced in object-oriented analysis. Such constraints could include the hardware and software platforms, the performance requirements, persistent storage and transaction, usability of the system, and limitations imposed by budgets and time. Concepts in the analysis model which is technology independent, are mapped onto implementing classes and interfaces resulting in a model of the solution domain, i.e., a detailed description of how the system is to be built on concrete technologies. [2]
+
+\subsection{Object oriented modling}
+Object-oriented modeling (OOM) is a common approach to modeling applications, systems, and business domains by using the object-oriented paradigm throughout the entire development life cycles. OOM is a main technique heavily used by both OOA and OOD activities in modern software engineering.
+Object-oriented modeling typically divides into two aspects of work: the modeling of dynamic behaviors like business processes and use Cases, and the modeling of static structures like classes and components. OOA and OOD are the two distinct abstract levels during OOM. The  Unified Modeling Language (UML)and SysML are the two popular international standard languages used for object-oriented modeling.[3]
+
+
+\subsection{Implementation}
+The system will be implemented using java script, HTML5, CSS, Node.js. HTML5 is a web markup language, used to format documents for transfer over HTTP or Socket.  Java script will ensure that the system cuts across the multiple platforms i.e. Mobile, Web and Desktop. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+The system will be comprise four major components.
+\begin{enumerate}[label=(\roman*)]
+\item Synchronization
+\item Authentication
+\item Notification
+\end{enumerate}
+Each of these components will will follow the Developers matrix to support continuous integration especially the test code and dependency management. 
+
+\subsection{Major algorithms}
+The analysis will be done with some of the most influential data mining algorithms in the research community which include; 
+C5.0, k-means, SVM, Apriori, EM, PageRank, AdaBoost, kNN, Naive Bayes, and CART. 
+C5.0
+C4.5 was superseded in 1997 by a commercial system See5/C5.0 (or C5.0 for short). The changes encompass new capabilities as well as much-improved efficiency, and include:
+- A variant of boosting [4], which constructs an ensemble of classifiers that are then voted to give a final classification. Boosting often leads to a dramatic improvement in predictive accuracy.
+-New data types (e.g., dates), “not applicable” values, variable miss-classification costs, and mechanisms to pre-filter attributes.
+ Unordered rule sets when a case is classified, all applicable rules are found and voted. This improves both the interpretability of rulesets and their predictive accuracy.
+k-Means The k-means algorithm is a simple iterative method to partition a given dataset into a user-specified number of clusters, k.
+Apriori
+Apriori is a seminal algorithm for finding frequent item sets using candidate generation[5].
+
+\subsection{Approach}
+
+The system is going to be built using the Developers matrix approach i.e.
+
+
+
+
+\[ \frac{SC | TC } {DM | BS } +  \\ VC = \\ SIMPLE-CI | SIMPLE-CD \]
+
+\par
+SC -\textgreater Source Code, TC -\textgreater Test Code, DM -\textgreater Dependency Management,
+\par
+BS -\textgreater Build System, VC -\textgreater Version Control, CI -\textgreater Continuous Integration,
+\par
+In a nutshell, that right up there is The Dev Matrix and it’s a simple formula we shall keep
+at the back of our mind when  designing the system to be supported by a CI / CD pipeline.
+
+\subsection{System testing and validation}
+The system will continuously be tested for bugs in each of the components and the dependency management will ensure that no new bugs are introduced into the system that can affect other modules of the system. Git will be used to manage the project and monitor changes to the project over time. Git has commit object and a roll back features that will ensure the changes introduced can be undone.
+
+\par
+The validation process will be performed in parallel with the system definition and system realization processes and  will apply to any activity and product resulting from this activity. It will be performed on an iterative basis on every produced engineering element during development and may begin with the validation of the expressed stakeholder requirements. In addition the testing will test will be carried with all the stakeholders to ensure that the system meets the requirements of the purposes for which it is developed. 
+
+\newpage
+\section{References}
+
+[1]Jacobsen, Ivar; Magnus Christerson; Patrik Jonsson; Gunnar Overgaard (1992). Object Oriented Software Engineering. Addison-Wesley ACM Press. pp. 77–79. ISBN 0-201-54435-0.
+\par
+[2]Conallen, Jim (2000). Building Web Applications with UML. Addison Wesley. p. 147. ISBN 0201615770.
+\par
+[3]Jacobsen, Ivar; Magnus Christerson; Patrik Jonsson; Gunnar Overgaard (1992). Object Oriented Software Engineering. Addison-Wesley ACM Press. pp. 15,199. ISBN 0-201-54435-0.
+\par
+[4] Freund Y, Schapire RE (1997) A decision-theoretic generalization of on-line learning and an applicationto boosting. J Comput Syst Sci 55(1):119–139
+\par
+[5]Agrawal R, Srikant R (1994) Fast algorithms for mining association rules. In: Proceedings of the 20th  VLDB conference, pp 487–499
+
+\newpage
+\section{Appendices}
+\end{document}
